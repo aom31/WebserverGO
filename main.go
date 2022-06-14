@@ -2,6 +2,11 @@ package main
 
 import "net/http"
 
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+
+}
+
 func main() {
-	http.ListenAndServe(":8080", nil)
+	http.HandleFunc("/", homeHandler)
+	http.ListenAndServe(":5000", nil)
 }
